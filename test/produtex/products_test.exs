@@ -8,7 +8,15 @@ defmodule Produtex.ProductsTest do
 
     import Produtex.ProductsFixtures
 
-    @invalid_attrs %{gluten: nil, gtin: nil, milk: nil, name: nil, nuts: nil, vegan: nil, veggie: nil}
+    @invalid_attrs %{
+      gluten: nil,
+      gtin: nil,
+      milk: nil,
+      name: nil,
+      nuts: nil,
+      vegan: nil,
+      veggie: nil
+    }
 
     test "list_products/0 returns all products" do
       product = product_fixture()
@@ -21,7 +29,15 @@ defmodule Produtex.ProductsTest do
     end
 
     test "create_product/1 with valid data creates a product" do
-      valid_attrs = %{gluten: true, gtin: "some gtin", milk: true, name: "some name", nuts: true, vegan: true, veggie: true}
+      valid_attrs = %{
+        gluten: true,
+        gtin: "some gtin",
+        milk: true,
+        name: "some name",
+        nuts: true,
+        vegan: true,
+        veggie: true
+      }
 
       assert {:ok, %Product{} = product} = Products.create_product(valid_attrs)
       assert product.gluten == true
@@ -39,7 +55,16 @@ defmodule Produtex.ProductsTest do
 
     test "update_product/2 with valid data updates the product" do
       product = product_fixture()
-      update_attrs = %{gluten: false, gtin: "some updated gtin", milk: false, name: "some updated name", nuts: false, vegan: false, veggie: false}
+
+      update_attrs = %{
+        gluten: false,
+        gtin: "some updated gtin",
+        milk: false,
+        name: "some updated name",
+        nuts: false,
+        vegan: false,
+        veggie: false
+      }
 
       assert {:ok, %Product{} = product} = Products.update_product(product, update_attrs)
       assert product.gluten == false

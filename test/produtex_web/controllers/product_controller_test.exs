@@ -23,7 +23,15 @@ defmodule ProdutexWeb.ProductControllerTest do
     vegan: false,
     veggie: false
   }
-  @invalid_attrs %{gluten: nil, gtin: nil, milk: nil, name: nil, nuts: nil, vegan: nil, veggie: nil}
+  @invalid_attrs %{
+    gluten: nil,
+    gtin: nil,
+    milk: nil,
+    name: nil,
+    nuts: nil,
+    vegan: nil,
+    veggie: nil
+  }
 
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
