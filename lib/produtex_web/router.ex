@@ -12,6 +12,7 @@ defmodule ProdutexWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    resources "/products", ProdutexWeb.ProductController, except: [:new, :edit]
   end
 
   scope "/", ProdutexWeb do
